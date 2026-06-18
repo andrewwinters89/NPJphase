@@ -1,6 +1,7 @@
 # NPJ Phase
 
 Updated: 18 June 2026
+
 This is a CMEC-compliant module that evaluates the daily and monthly variability of the North Pacific jet stream during the cool season within gridded model datasets.
 
 ## Introduction
