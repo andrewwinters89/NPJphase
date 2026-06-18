@@ -8,7 +8,7 @@ The variability of the North Pacific jet stream during the cool season (Septembe
 
 The utility of this approach is that instantaneous daily or monthly zonal wind anomalies can be projected onto these EOF patterns, producing a couplet of principal components that can be plotted on a two-dimensional phase space [Winters et al. 2019a, their Fig. 4](https://doi.org/10.1175/WAF-D-18-0106.1). Using this phase diagram, we are able to define a set of 5 North Pacific jet regimes that can be used to characterize the prevailing flow pattern across the North Pacific. Each of these regimes are associated with distinct impacts on temperatures and precipitation downstream over North America ([Winters et al. 2019a, their Fig. 5](https://doi.org/10.1175/WAF-D-18-0106.1), [Winters et al. 2019b](https://doi.org/10.1175/WAF-D-18-0168.1), [Winters and Walker 2022](https://doi.org/10.1175/JAMC-D-21-0211.1), [Winters and Attard 2022](https://doi.org/10.1175/WAF-D-21-0203.1) and each regime is associated with different degrees of predictive skill on medium-range to subseasonal timescales ([Winters et al. 2019a](https://doi.org/10.1175/WAF-D-18-0106.1), [Winters 2021](https://doi.org/10.1029/2021JD035094), [Henderson and Winters 2026](https://doi.org/10.1175/WAF-D-25-0170.1). 
 
-This module subsequently permits the identification of these different NPJ regimes within any gridded model dataset that is provided as input. Input data is evaluated against daily or monthly EOF patterns that are defined based on zonal wind anomalies from ERA5 during September 1979-2014. Anomalies on a daily timescale are calculated based on a daily climatology computed by using a 21-day moving window centered on each day. Monthly anomalies are defined based on the calendar month.
+This module subsequently permits the identification of these different NPJ regimes within any gridded model dataset that is provided as input. Input data is evaluated against daily or monthly EOF patterns that are defined based on zonal wind anomalies from ERA5 during September 1979-2014. Anomalies on a daily timescale are calculated based on a daily climatology computed by using a 21-day moving window centered on each day. Monthly anomalies are defined based on the calendar month. ERA5 climatology files are provided as part of the module and are included in the "climo_files" folder. Files with EOF patterns describing the daily or monthly variability of the North Pacific jet stream are also included as part of the "climo_files" folder. These files, and the zonal wind climatologies, are required for the module to work.
 
 ## Input Data Requirements
 
@@ -32,3 +32,32 @@ For E3SM data, target remapping files are also provided in the "input_files" fol
 
 `INSERT CODE HERE`
 
+## Installation
+
+Please use git clone to obtain a local copy of this repository.
+
+The module is run via cmec-driver command line program ([code repository](https://github.com/cmecmetrics/cmec-driver)), which has its own [installation instructions](https://github.com/cmecmetrics/cmec-driver#installation).
+
+### Python Environment    
+This module depends on a few different python packages along with other modules from the Python standard library. An environment called '_CMEC_npjphase_env' must be created which includes these packages.
+
+A yaml file is provided with the source code to help create this environment:  
+`conda env create -f npjphase_env.yaml`
+
+### Register The Module 
+Activate an existing environment with cmec-driver installed. You can then register the module by using the following command
+
+`cmec-driver register path/to/example_cmec_module/`  
+
+This command will update your cmec.json file in your ~/.cmec folder with a list of default user parameters that can be changed.
+
+### Custom User Settings
+
+Once you have registered the module, you can update the user settings in cmec.json to work with your input dataset. The following settings are allowable:
+
+pressure_level: "200", "250", or "300"
+frequency: "daily" or "month"
+data_type: "era5", "e3sm", or "other"
+input_dataset: <INSERT_INPUT_FILE_NAME>
+
+A default input dataset with monthly resolution is provided from ERA5 in the "input_files" folder as part of the module for testing purposes, and will work with the default settings that installed when the module is registered.
