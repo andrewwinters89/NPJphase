@@ -14,7 +14,7 @@
     "varlist": {        
         "zonal_wind": {
             "units": "m s–1",
-            "frequency": ["month","daily"],
+            "frequency": ["mon","day"],
             "z_levels": [200,250,300],
             "z_units": "hPa"},
         "standardized EOF 1": {
