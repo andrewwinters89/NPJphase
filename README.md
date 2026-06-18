@@ -61,3 +61,11 @@ data_type: "era5", "e3sm", or "other"
 input_dataset: <INSERT_INPUT_FILE_NAME>
 
 A default input dataset with monthly resolution is provided from ERA5 in the "input_files" folder as part of the module for testing purposes, and will work with the default settings that installed when the module is registered.
+
+## Running The Module
+Activate a python environment with the cmec-driver installed. If an output directory does not already exist, create one. Use the "model_directory" that contains the input data that you'd like to evaluate.
+
+`cmec-driver run model_directory/ output/ NPJphase`  
+
+Navigate into the "output" folder to view the results. The module will produce 4 different plots. Two of the plots are provided as reference and show the climatological zonal wind during the cool season and the corresponding EOF patterns for the configuration you've chosen. The other two plots show the percent frequency of each NPJ regime as well as a scatterplot of where the NPJ projected onto an NPJ phase diagram for each timestep within the input dataset. A text file is also produced with the principal component couplet for each timestep as well as the NPJ regime classification. 
+
