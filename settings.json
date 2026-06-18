@@ -40,7 +40,7 @@
             "frequency": ["mon","day"]}},
     "default_parameters": {
     		"pressure_level": "250",
-    		"frequency": "daily",
+    		"frequency": "month",
     		"data_type": "era5",
-    		"input_dataset": "era5_2006_daily.nc"}
+    		"input_dataset": "era5_2006_month.nc"}
 }
