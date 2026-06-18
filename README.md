@@ -54,11 +54,14 @@ This command will update your cmec.json file in your ~/.cmec folder with a list 
 
 ### Custom User Settings
 
-Once you have registered the module, you can update the user settings in cmec.json to work with your input dataset. The following settings are allowable:
+Once you have registered the module, you can update the user settings in cmec.json to work with your input dataset. The following settings are allowable
 
 pressure_level: "200", "250", or "300"
+
 frequency: "daily" or "month"
+
 data_type: "era5", "e3sm", or "other"
+
 input_dataset: <INSERT_INPUT_FILE_NAME>
 
 A default input dataset with monthly resolution is provided from ERA5 in the "input_files" folder as part of the module for testing purposes, and will work with the default settings that installed when the module is registered.
