@@ -14,4 +14,12 @@ This module subsequently permits the identification of these different NPJ regim
 
 The module is designed to work with any gridded dataset that has been pre-processed appropriately. In particular, any input dataset must be in netcdf format and restricted to a single calendar year (i.e., 365 timesteps for daily data or 12 timesteps for monthly data). Full zonal wind data from 200, 250, or 300 hPa can be used (do not calculate anomalies as these are done by the module). 
 
-Input data must be regridded into a 1x1 degree lat/lon format (180x360) extending from 0.5-379.5 degrees East and -89.5 to 89.5 degrees North. Smaller horizontal domains are permitted, so long as the horizontal grid spacing is 1x1 degree and data are continuous between 10.5-79.5 degrees North and 100.5-239.5 degrees East. The coordinates of the input dataset should be [time, level, lat, lon], where time is a datetime object and level is the pressure in hPa. 
+Input data must be regridded into a 1x1 degree lat/lon format (180x360) extending from 0.5-379.5 degrees East and -89.5 to 89.5 degrees North. Smaller horizontal domains are permitted, so long as the horizontal grid spacing is 1x1 degree and data are continuous between 10.5-79.5 degrees North and 100.5-239.5 degrees East. The coordinates of the input dataset should be [time, level, lat, lon], where time is a datetime object and level is the pressure in hPa, and the zonal wind variable should be defined as "u". More information on how to read in your input dataset are provided in the "user settings" section below.
+
+Two exceptions are allowed to streamline input data requirements for the module. In particular, support is provided for [ERA5 daily-averaged](https://cds.climate.copernicus.eu/datasets/derived-era5-pressure-levels-daily-statistics?tab=download) and [ERA5 monthly-averaged](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels-monthly-means?tab=overview) datasets downloaded from the Copernicus data store. As above, input data to the module should be restricted to a single calendar year. The module is also built to work directly with regridded data from E3SM. The use of E3SM and ERA5 data as input to the module is specified as a user setting.
+
+### Regridding Input Data
+
+As mentioned above, it is generally required for input datasets to be regridded prior to running the module. To help facilitate regridding spatial data to the correct format, a regridding file is provided as part of the module "NPJregrid.txt" for use with the Climate Data Operators (CDO) package. A sample command to regrid lat/lon data to the required input format is as follows:
+
+
