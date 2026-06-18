@@ -69,3 +69,8 @@ Activate a python environment with the cmec-driver installed. If an output direc
 
 Navigate into the "output" folder to view the results. The module will produce 4 different plots. Two of the plots are provided as reference and show the climatological zonal wind during the cool season and the corresponding EOF patterns for the configuration you've chosen. The other two plots show the percent frequency of each NPJ regime as well as a scatterplot of where the NPJ projected onto an NPJ phase diagram for each timestep within the input dataset. A text file is also produced with the principal component couplet for each timestep as well as the NPJ regime classification. 
 
+## Acknowledgement
+Content in this repository was developed through support provided by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental
+Research under Award Number DE-SC-0024002.
+
+
