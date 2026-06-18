@@ -20,10 +20,15 @@ Two exceptions are allowed to streamline input data requirements for the module.
 
 ### Tips for Regridding Input Data
 
-As mentioned above, it is generally required for input datasets to be regridded prior to running the module. To help facilitate regridding spatial data to the correct format, a regridding file is provided as part of the module "NPJregrid.txt" for use with the Climate Data Operators (CDO) package. A sample command to regrid lat/lon data to the required input format is as follows:
+As mentioned above, it is generally required for input datasets to be regridded prior to running the module. To help facilitate regridding spatial data to the correct format, a regridding file is provided in the "input_files" folder ("NPJregrid.txt") for use with the Climate Data Operators (CDO) package. A sample command to regrid lat/lon data to the required input format is as follows:
+
 `cdo -remapbil,NPJregrid.txt -sellevel,<INSERT_PRESSURE_LEVEL> -select,name=<INSERT_ZONAL_WIND_VARIABLE_NAME> <INPUT_FILE> <OUTPUT_FILE>`
 
 The names of variables and coordinates can also be renamed using CDO in order to format input data to the correct format. A sample command is as follows:
+
 `cdo -chname,<OLD_NAME>,<NEW_NAME> <INPUT_FILE> <OUTPUT_FILE>`
 
+For E3SM data, target remapping files are also provided in the "input_files" folder to regrid both low-resolution (LR) and NARRM E3SMv3 data to the required lat/lon grid. For this purpose, the ncremap package can be particularly useful, and a sample command is as follows:
+
+`INSERT CODE HERE`
 
