@@ -39,15 +39,16 @@ Please use git clone to obtain a local copy of this repository.
 The module is run via cmec-driver command line program ([code repository](https://github.com/cmecmetrics/cmec-driver)), which has its own [installation instructions](https://github.com/cmecmetrics/cmec-driver#installation).
 
 ### Python Environment    
-This module depends on a few different python packages along with other modules from the Python standard library. An environment called '_CMEC_npjphase_env' must be created which includes these packages.
+This module depends on a few different python packages along with other modules from the Python standard library. An environment called "_CMEC_npjphase_env" must be created which includes these packages.
 
-A yaml file is provided with the source code to help create this environment:  
+A yaml file is provided with the source code to help create this environment: 
+
 `conda env create -f npjphase_env.yaml`
 
 ### Register The Module 
-Activate an existing environment with cmec-driver installed. You can then register the module by using the following command
+Activate an existing environment with cmec-driver installed. You can then register the module by using the following command:
 
-`cmec-driver register path/to/example_cmec_module/`  
+`cmec-driver register path/to/NPJphase/`  
 
 This command will update your cmec.json file in your ~/.cmec folder with a list of default user parameters that can be changed.
 
