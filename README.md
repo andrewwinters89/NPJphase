@@ -64,7 +64,7 @@ data_type: "era5", "e3sm", or "other"
 
 input_dataset: <INSERT_INPUT_FILE_NAME>
 
-A default input dataset with monthly resolution is provided from ERA5 in the "input_files" folder as part of the module for testing purposes, and will work with the default settings that installed when the module is registered.
+A default input dataset with monthly resolution is provided from ERA5 in the "input_files" folder as part of the module for testing purposes. This dataset will work with the default settings that are installed when the module is registered.
 
 ## Running The Module
 Activate a python environment with the cmec-driver installed. If an output directory does not already exist, create one. Use the "model_directory" that contains the input data that you'd like to evaluate.
