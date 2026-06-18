@@ -12,4 +12,6 @@ This module subsequently permits the identification of these different NPJ regim
 
 ## Input Data Requirements
 
-The mod
+The module is designed to work with any gridded dataset that has been pre-processed appropriately. In particular, any input dataset must be in netcdf format and restricted to a single calendar year (i.e., 365 timesteps for daily data or 12 timesteps for monthly data). Full zonal wind data from 200, 250, or 300 hPa can be used (do not calculate anomalies as these are done by the module). 
+
+Input data must be regridded into a 1x1 degree lat/lon format (180x360) extending from 0.5-379.5 degrees East and -89.5 to 89.5 degrees North. Smaller horizontal domains are permitted, so long as the horizontal grid spacing is 1x1 degree and data are continuous between 10.5-79.5 degrees North and 100.5-239.5 degrees East. The coordinates of the input dataset should be [time, level, lat, lon], where time is a datetime object and level is the pressure in hPa. 
