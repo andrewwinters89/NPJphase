@@ -1,0 +1,10 @@
+{
+    "module": {
+        "name": "NPJphase",
+        "long_name": "North Pacific Jet Phase Diagram Module",
+        "version": "1"
+    },
+    "contents": [
+        "regimes/regimes.json"
+    ]
+}

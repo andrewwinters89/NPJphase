@@ -1,0 +1,46 @@
+{
+    "module": {
+        "name": "NPJphase",
+        "long_name": "North Pacific Jet Regime Module",
+        "version": "1"},
+    "info": "Settings used for NPJ phase diagram module",
+    "obslist": {},
+    "settings": {
+        "async": "none",
+        "description": "Performs calculations of North Pacific jet regime statistics",
+        "driver": "NPJphase_driver.sh",
+        "name": "NPJphase",
+        "long_name": "NPJ regime statistics package"},
+    "varlist": {        
+        "zonal_wind": {
+            "units": "m s–1",
+            "frequency": ["month","daily"],
+            "z_levels": [200,250,300],
+            "z_units": "hPa"},
+        "standardized EOF 1": {
+        	"units": "m s–1",
+        	"frequency": ["mon","day"],
+        	"z_levels": [200,250,300],
+        	"z_units": "hPa"},
+        "standardized EOF 2": {
+        	"units": "m s–1",
+        	"frequency": ["mon","day"],
+        	"z_levels": [200,250,300],
+    		"z_units": "hPa"}},
+    "supporting_data": {
+        "climatological zonal wind": {
+            "long_name": "Climatological Zonal Wind from ERA5 during September-May 1979-2014",
+            "description": "Contains zonal wind anomalies over the North Pacific during September-May 1979-2014 from ERA5, which are used to compute zonal wind anomalies within the module. Anomalies are available in 21-day running means centered on each day during the cold season or monthly and on three vertical levels (200, 250, 300 hPa)",
+            "z_levels": [200,250,300],
+            "frequency": ["mon","day"]},
+       "ERA5 EOF patterns": {
+            "long_name": "Two leading EOF patterns of zonal wind anomalies during September-May 1979-2014 over the North Pacific within ERA5",
+            "description": "These files contain the two leading EOFs of zonal wind anomalies during September–May 1979-2014 over the North Pacific within ERA5. EOF patterns are defined on three vertical levels (200, 250, 300 hPa), and using daily or monthly data",
+            "z_levels": [200,250,300],
+            "frequency": ["mon","day"]}},
+    "default_parameters": {
+    		"pressure_level": "250",
+    		"frequency": "daily",
+    		"data_type": "era5",
+    		"input_dataset": "era5_2006_daily.nc"}
+}

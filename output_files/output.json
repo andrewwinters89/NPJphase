@@ -1,0 +1,46 @@
+{
+    "provenance": {
+        "environment": {
+            "numpy": "2.4.6",
+            "xarray": "2026.4.0",
+            "matplotlib": "3.10.9",
+            "cartopy": "0.25.0",
+            "python": "3.14.6"
+        },
+        "data type": "era5",
+        "data frequency": "daily",
+        "pressure level": "250",
+        "modeldata": "/global/homes/a/awinters/NPJphase/input_files/era5_2006_daily.nc",
+        "log": "regimes.log",
+        "date": "Jun 16 2026 16:46:34 UTC"
+    },
+    "plots": {
+        "EOF 1 pdf": {
+            "filename": "ERA5_EOF1_250hpa_daily.pdf",
+            "long_name": "EOF 1 of ERA5 Zonal Wind Anomalies over the North Pacific (1979-2014)",
+            "description": "EOF 1 of ERA5 Zonal Wind Anomalies"
+        },
+        "EOF 2 pdf": {
+            "filename": "ERA5_EOF2_250hpa_daily.pdf",
+            "long_name": "EOF 2 of ERA5 Zonal Wind Anomalies over the North Pacific (1979-2014)",
+            "description": "EOF 2 of ERA5 Zonal Wind Anomalies"
+        },
+        "NPJ phase diagram scatterplot pdf": {
+            "filename": "NPJphasediagram_scatterplot_250hpa_daily.pdf",
+            "long_name": "Scatterplot of NPJ projections onto the NPJ phase diagram",
+            "description": "NPJ projections onto the NPJ phase diagram"
+        },
+        "NPJ regime frequency pdf": {
+            "filename": "npj_regime_frequencies_250hpa_daily.pdf",
+            "long_name": "Percent Frequency of NPJ regimes",
+            "description": "Percent Frequency of NPJ regimes"
+        }
+    },
+    "data": {
+        "NPJ principal components": {
+            "filename": "npjpcs_250hpa_daily.txt",
+            "long_name": "Timeseries of NPJ principal components 1 and 2, and the classified NPJ regime",
+            "description": "Principal Components 1 and 2 and the NPJ regime"
+        }
+    }
+}

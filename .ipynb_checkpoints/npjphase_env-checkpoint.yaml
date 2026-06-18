@@ -1,0 +1,11 @@
+name: _CMEC_npjphase_env
+channels:
+  - conda-forge
+dependencies:
+  - matplotlib-base
+  - netcdf4
+  - numpy
+  - python>=3.6
+  - xarray
+  - cartopy
+  
