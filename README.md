@@ -36,19 +36,19 @@ For E3SM data, target remapping files are also provided in the "input_files" fol
 
 ## Installation
 
-Please use git clone to obtain a local copy of this repository.
+First, please use git clone to obtain a local copy of this repository.
 
-The module is run via cmec-driver command line program ([code repository](https://github.com/cmecmetrics/cmec-driver)), which has its own [installation instructions](https://github.com/cmecmetrics/cmec-driver#installation).
+The module is run via the cmec-driver command line program ([code repository](https://github.com/cmecmetrics/cmec-driver)), which has its own [installation instructions](https://github.com/cmecmetrics/cmec-driver#installation). Be sure that the cmec-driver program and its environmental variables are set-up to recognize your local source file for conda and python environments.
 
 ### Python Environment    
-This module depends on a few different python packages along with other modules from the Python standard library. An environment called "_CMEC_npjphase_env" must be created which includes these packages.
+This module depends on a few different python packages along with other modules from the Python standard library. An environment called "_CMEC_npjphase_env", which includes these packages, must be created before running the module for the first time.
 
-A yaml file is provided with the source code to help create this environment: 
+A yaml file is provided with the source code for this module to create this environment. The environment can be created by running the following code locally: 
 
 `conda env create -f npjphase_env.yaml`
 
 ### Register The Module 
-Activate an existing environment with cmec-driver installed. You can then register the module by using the following command:
+Activate an existing python environment with cmec-driver installed. You can then register this module by using the following command:
 
 `cmec-driver register path/to/NPJphase/`  
 
@@ -56,7 +56,7 @@ This command will update your cmec.json file in your ~/.cmec folder with a list 
 
 ### Custom User Settings
 
-Once you have registered the module, you can update the user settings in cmec.json to work with your input dataset. The following settings are allowable
+Once you have registered the module, you can update the user settings in cmec.json to work with your input dataset. The following settings are allowable:
 
 pressure_level: "200", "250", or "300"
 
@@ -66,14 +66,14 @@ data_type: "era5", "e3sm", or "other"
 
 input_dataset: <INSERT_INPUT_FILE_NAME>
 
-A default input dataset with monthly resolution is provided from ERA5 in the "input_files" folder as part of the module for testing purposes. This dataset will work with the default settings that are installed when the module is registered.
+A default input dataset with monthly resolution is provided from ERA5 in the "input_files" folder as part of the module for testing purposes. This dataset will work with the default settings that are loaded into cmec.json when the module is registered.
 
 ## Running The Module
-Activate a python environment with the cmec-driver installed. If an output directory does not already exist, create one. Use the "model_directory" that contains the input data that you'd like to evaluate.
+Activate a python environment with cmec-driver installed. If an output directory does not already exist, create one. Use the "model_directory" that contains the input dataset that you'd like to evaluate.
 
-`cmec-driver run model_directory/ output/ NPJphase`  
+`cmec-driver run model_directory/ output_directory/ NPJphase`  
 
-Navigate into the "output" folder to view the results. The module will produce 4 different plots. Two of the plots are provided as reference and show the climatological zonal wind during the cool season and the corresponding EOF patterns for the configuration you've chosen. The other two plots show the percent frequency of each NPJ regime as well as a scatterplot of where the NPJ projected onto an NPJ phase diagram for each timestep within the input dataset. A text file is also produced with the principal component couplet for each timestep as well as the NPJ regime classification. 
+Navigate into the "output_directory" folder to view the results. The module will produce 4 different plots. Two of the plots show the climatological zonal wind during the cool season from ERA5 and the corresponding EOF patterns for the configuration you've chosen. The other two plots show the percent frequency of each NPJ regime within your input dataset, as well as a scatterplot of where the NPJ projected onto the NPJ phase diagram for each timestep within the input dataset. A text file is also produced with the principal component couplet for each timestep and the corresponding NPJ regime classification. 
 
 ## Acknowledgement
 Content in this repository was developed through support provided by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental
